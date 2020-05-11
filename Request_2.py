@@ -16,6 +16,6 @@ headers=({
 "X-Naver-Client-Id":"UbTts_4hgkPO2xQb_5nl",
 "X-Naver-Client-Secret":"bvmSoaaOAs"
 })
-
+print("FINISH")
 response = requests.post(URL,headers=headers, data = body)
 print(response.content)
