@@ -1,15 +1,30 @@
 import requests
 import json
-URL = 'https://openapi.naver.com/v1/datalab/shopping/category/keyword/device'
+URL = 'https://openapi.naver.com/v1/datalab/search'
 body =json.dumps({
       "startDate": "2017-08-01",
       "endDate": "2017-09-30",
       "timeUnit": "month",
-      "category": "50000000",
-      "keyword": "정장",
-      "device": "",
-      "gender": "",
-      "ages": [ ]
+      "keywordGroups": [
+        {
+            "groupName": "코로나",
+            "keywords": [
+                "코로나",
+                "corona"
+            ]
+        },
+        {
+            "groupName": "코로나19",
+            "keywords": [
+                "코로나19",
+                "corona19"
+            ]
+        }
+    ]
+      ,
+      "device": "pc",
+      "gender": "f"
+      
     })
 
 headers=({
@@ -18,4 +33,4 @@ headers=({
 })
 print("FINISH")
 response = requests.post(URL,headers=headers, data = body)
-print(response.content)
+print(response.json())
