@@ -61,7 +61,6 @@ def get_query():
 	p1=Collector(query,s_date,e_date,s_from,e_to,count)
 	p1.saver()
 
-	r = open('new_connection.html','r')
 
 
 	return render_template('new_connection.html')
